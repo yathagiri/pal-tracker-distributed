@@ -14,6 +14,10 @@ buildscript {
         junitVersion = "4.12"
         okhttpVersion = "3.12.0"
         jsonPathVersion = "2.4.0"
+        springCloudVersion = "Finchley.RELEASE"
+        springCloudServicesClientLibrariesVersion = "2.0.1.RELEASE"
+        eurakeRelease = "2.0.0.RELEASE"
+        springBootAutocofigureVersion = "2.0.6.RELEASE"
     }
 
     repositories {
@@ -21,9 +25,13 @@ buildscript {
         jcenter()
     }
 
+
     dependencies {
         classpath "org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion"
         classpath "mysql:mysql-connector-java:$mysqlVersion"
+        classpath "org.springframework.cloud:spring-cloud-starter-netflix-eureka-server:$eurakeRelease"
+        classpath "org.springframework.boot:spring-boot-autoconfigure:$springBootAutocofigureVersion"
+        classpath "org.springframework.cloud:spring-cloud-commons:$eurakeRelease"
     }
 }
 
