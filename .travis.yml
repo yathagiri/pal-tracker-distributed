@@ -19,6 +19,7 @@ jobs:
         mariadb: '10.2'
       install: skip
       before_script:
+        - "export JAVA_OPTS=-Xmx1g"
         - mysql -uroot < databases/create_databases.sql
         - ./gradlew testMigrate
       script: ./gradlew clean build
